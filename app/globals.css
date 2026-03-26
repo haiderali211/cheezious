@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background-color: #0A0A0A;
+  background-color: #080808;
   color: #F8F8F4;
   font-family: 'Chillax', sans-serif;
   overflow-x: hidden;
@@ -40,9 +40,11 @@ body {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0A0A0A;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #FFD600;
   border-radius: 2px;
@@ -50,10 +52,29 @@ body {
 
 /* ─── Scroll-hint drop animation ────────────────────────────────── */
 @keyframes scrollDrop {
-  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
-  49%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  50%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 1;
+  }
+
+  49% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
 }
 
 .scroll-drop {
@@ -65,25 +86,30 @@ body {
   opacity: 0;
   transform: translateY(36px);
 }
+
 .aos-visible {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .aos-hidden-left {
   opacity: 0;
   transform: translateX(-36px);
 }
+
 .aos-visible-left {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
+
 .aos-hidden-right {
   opacity: 0;
   transform: translateX(36px);
 }
+
 .aos-visible-right {
   opacity: 1;
   transform: translateX(0);
