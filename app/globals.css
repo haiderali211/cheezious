@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Chillax Font (from Fontshare) ─────────────────────────────── */
+@import url('https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700&display=swap');
+
+/* ─── CSS Variables ──────────────────────────────────────────────── */
+:root {
+  --yellow: #FFD600;
+  --yellow-dark: #F5C400;
+  --black: #0A0A0A;
+  --black-mid: #141414;
+  --black-soft: #1E1E1E;
+  --white: #F8F8F4;
+  --gray: #888888;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #F8F8F4;
+  font-family: 'Chillax', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background: #FFD600;
+  color: #0A0A0A;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD600;
+  border-radius: 2px;
+}
+
+/* ─── Scroll-hint drop animation ────────────────────────────────── */
+@keyframes scrollDrop {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  49%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+.scroll-drop {
+  animation: scrollDrop 1.8s ease-in-out infinite;
+}
+
+/* ─── AOS utility ────────────────────────────────────────────────── */
+.aos-hidden {
+  opacity: 0;
+  transform: translateY(36px);
+}
+.aos-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.aos-hidden-left {
+  opacity: 0;
+  transform: translateX(-36px);
+}
+.aos-visible-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.aos-hidden-right {
+  opacity: 0;
+  transform: translateX(36px);
+}
+.aos-visible-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
