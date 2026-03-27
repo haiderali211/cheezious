@@ -19,15 +19,32 @@
 /* ─── Base ───────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal overflow on all viewports */
+  overflow-x: hidden;
+  /* Enable momentum-based scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   background-color: #080808;
   color: #F8F8F4;
   font-family: 'Chillax', sans-serif;
+  /* Prevent horizontal overflow — fixes "floating" on mobile */
   overflow-x: hidden;
+  max-width: 100vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Improve tap responsiveness on mobile */
+  touch-action: manipulation;
+}
+
+/* Ensure all elements respect viewport width */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, canvas, video {
+  max-width: 100%;
 }
 
 /* ─── Selection ──────────────────────────────────────────────────── */
@@ -114,4 +131,14 @@ body {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+/* ─── Hide scrollbar utility (for horizontal scroll containers) ──── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

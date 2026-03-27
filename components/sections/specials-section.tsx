@@ -41,6 +41,7 @@ export default function SpecialsSection() {
           src={DEAL_CONTENT.image}
           alt="Cheezious Special Deal"
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover hover:scale-105 transition-transform duration-700"
         />
         {/* Yellow corner accent */}
@@ -50,19 +51,20 @@ export default function SpecialsSection() {
       {/* Content */}
       <div
         ref={contentRef}
-        className="bg-brand-black-mid flex flex-col justify-center px-10 md:px-16 lg:px-24 py-20"
+        className="bg-brand-black-mid flex flex-col justify-center px-7 sm:px-10 md:px-16 lg:px-24 py-14 sm:py-20"
         style={{
           opacity: contentInView ? 1 : 0,
           transform: contentInView ? "translateX(0)" : "translateX(40px)",
           transition: "opacity 0.85s ease 0.1s, transform 0.85s ease 0.1s",
         }}
       >
-        <span className="inline-block bg-brand-yellow text-brand-black text-[0.65rem] font-bold tracking-[3px] uppercase px-3 py-1.5 rounded w-fit mb-8">
+        <span className="inline-block bg-brand-yellow text-brand-black text-[0.65rem] font-bold tracking-[3px] uppercase px-3 py-1.5 rounded w-fit mb-7 sm:mb-8">
           {DEAL_CONTENT.tag}
         </span>
 
-        <h2 className="font-chillax font-bold text-brand-white leading-none tracking-wide mb-6"
-          style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+        <h2
+          className="font-chillax font-bold text-brand-white leading-none tracking-wide mb-5 sm:mb-6"
+          style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
         >
           {DEAL_CONTENT.title.map((line, i) => (
             <span key={i} className="block">
@@ -71,13 +73,13 @@ export default function SpecialsSection() {
           ))}
         </h2>
 
-        <p className="text-brand-gray text-base leading-8 mb-10 max-w-sm">
+        <p className="text-brand-gray text-sm sm:text-base leading-7 sm:leading-8 mb-8 sm:mb-10 max-w-sm">
           {DEAL_CONTENT.description}
         </p>
 
         <a
           href="#"
-          className="inline-flex items-center gap-3 bg-brand-yellow text-brand-black font-bold text-sm tracking-[2px] uppercase px-8 py-4 rounded w-fit hover:bg-brand-yellow-dark transition-colors duration-200 group"
+          className="inline-flex items-center gap-3 bg-brand-yellow text-brand-black font-bold text-sm tracking-[2px] uppercase px-7 sm:px-8 py-3.5 sm:py-4 rounded w-fit hover:bg-brand-yellow-dark transition-colors duration-200 group touch-manipulation"
         >
           {DEAL_CONTENT.cta}
           <span className="transition-transform duration-200 group-hover:translate-x-1">
